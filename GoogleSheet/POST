@@ -1,0 +1,44 @@
+var sheet = spreadsheet.getSheetByName("Attendance")
+var reference = spreadsheet.getSheetByName("Reference")
+
+const doPost = (request = {}) => {
+  const { parameter, postData: { contents, type } = {} } = request;
+  const { source } = parameter;
+
+  if (type === 'application/json') {
+    const jsonData = JSON.parse(contents);
+    return ContentService.createTextOutput(JSON.stringify(jsonData));
+  }
+
+  if (type === 'application/x-www-form-urlencoded') {
+    handleData(contents)
+    return ContentService.createTextOutput(JSON.stringify(json));
+  }
+
+  return ContentService.createTextOutput(contents);
+};
+
+function handleData(e) {
+  let arrays = reference.getRange("A2:A1000").getValues()
+  let column = getColumn()
+  for (i in arrays) {
+    if (e.includes(arrays[i][0]) && arrays[i][0] != "") {
+      let row = parseInt(i) + 2
+      sheet.getRange(parseInt(row), column).setValue("✓")
+    }
+  }
+}
+
+function getColumn() {
+  let arrays = sheet.getRange("C1:BB1").getValues()
+  for (i in arrays[0]) {
+    let day = new Date(arrays[0][i])
+    let now = new Date()
+    if (arrays[0][i] == "" || (day.getMonth() == now.getMonth() && day.getDate() == now.getDate())) {
+      let column = parseInt(i) + 3
+      sheet.getRange(1, column).setValue(now)
+      return column
+      break
+    }
+  }
+}
