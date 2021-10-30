@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B50BAA9126FA528800F2A6A4 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50BAA9026FA528800F2A6A4 /* HistoryView.swift */; };
 		B512F0A7272CFBA1002BBE3D /* MemberNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = B512F0A6272CFBA1002BBE3D /* MemberNames.swift */; };
+		B512F0A9272CFD94002BBE3D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B512F0A8272CFD94002BBE3D /* .gitignore */; };
 		B52C639326F50F6D00247C72 /* NHSAttendanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C639226F50F6D00247C72 /* NHSAttendanceApp.swift */; };
 		B52C639526F50F6D00247C72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52C639426F50F6D00247C72 /* ContentView.swift */; };
 		B52C639726F50F6E00247C72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B52C639626F50F6E00247C72 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 /* Begin PBXFileReference section */
 		B50BAA9026FA528800F2A6A4 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		B512F0A6272CFBA1002BBE3D /* MemberNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberNames.swift; sourceTree = "<group>"; };
+		B512F0A8272CFD94002BBE3D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B52C638F26F50F6D00247C72 /* Attendance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attendance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B52C639226F50F6D00247C72 /* NHSAttendanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NHSAttendanceApp.swift; sourceTree = "<group>"; };
 		B52C639426F50F6D00247C72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		B52C638626F50F6D00247C72 = {
 			isa = PBXGroup;
 			children = (
+				B512F0A8272CFD94002BBE3D /* .gitignore */,
 				B52C639126F50F6D00247C72 /* NHSAttendance */,
 				B52C63A226F50F6E00247C72 /* NHSAttendanceTests */,
 				B52C63AC26F50F6E00247C72 /* NHSAttendanceUITests */,
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B52C639A26F50F6E00247C72 /* Preview Assets.xcassets in Resources */,
+				B512F0A9272CFD94002BBE3D /* .gitignore in Resources */,
 				B52C639726F50F6E00247C72 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
