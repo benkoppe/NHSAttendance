@@ -68,6 +68,7 @@ struct SubmitView: View {
                                     self.state = .finished
                                     DispatchQueue.main.async {
                                         memberArray.objectWillChange.send()
+                                        saveHistory(for: memberArray.getHereNames())
                                         memberArray.clearHere()
                                         memberArray.saveHere()
                                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
@@ -120,6 +121,17 @@ struct SubmitView: View {
             memberArray.members[offset].isHere = false
             memberArray.saveHere()
         }
+    }
+    
+    func saveHistory(for names: [String]) {
+        let userDefaults = UserDefaults.standard
+        var data: [Date : [String]] = [:]
+        if let decoded = userDefaults.data(forKey: "history"), let readData = try? NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(decoded) as? [Date: [String]] {
+            data = readData
+        }
+        data[Date()] = names
+        let encoded = try? NSKeyedArchiver.archivedData(withRootObject: data, requiringSecureCoding: false)
+        userDefaults.set(encoded, forKey: "history")
     }
 }
 
